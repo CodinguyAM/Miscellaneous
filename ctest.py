@@ -1,0 +1,5 @@
+print('HE')
+print('HA')
+print()
+print('HE', end = '')
+print('HA')
