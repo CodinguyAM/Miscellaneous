@@ -4,10 +4,11 @@ def randchoose(ls):
     return ls[random.randint(0, len(ls)-1)]
 
 HANDLE = open('zwords.txt')
-words = HANDLE.read().split(', ')
+words = set(HANDLE.read().split(', '))
 HANDLE.close()
+words = set(words)
+print(len(words) - 1, "words loaded...")
 #print(words)
-print(len(words), "words loaded...")
 def evalinp(inp, word):
     rs = ""
     for index in range(len(word)):
@@ -24,7 +25,7 @@ def evalinp(inp, word):
 #print(evalinp("MOIST", "MOUTH"))
 print("This is a Python implementation of the game Wordle by James Wardle.")
 print("I claim no credit for the idea of this game. ")
-print("Please ennjoy my Python implementation of Wordle.")
+print("Please enjoy my Python implementation of Wordle.")
 while True:
     HANDLE = open('zwords.txt')
     words = HANDLE.read().split(', ')
@@ -46,7 +47,7 @@ while True:
                 print("Not a word.")
                 i = i - 1
                 continue
-           
+            
             print("The result is", evalinp(inp, word))
             print()
             if evalinp(inp, word) == "GGGGG":
